@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Real Time chat using websockets</title>
+    <link href="/styles.css" rel="stylesheet"/>
+    <style>
+      body{
+          margin-top:30px;
+        }
+    </style>
+
+
+
+  </head>
+  <body>
+  <div class="container" >
+       <!-- login area -->
+      <div id="userformarea" class="row ">
+        <div id="userloginarea">
+             <h1>Login page</h1>
+        <form id="userform" method="post" >
+           <input  class="form-control" id="username" type="text" placeholder="username" />
+           <!-- <input type="password" placeholder="Password" />  -->
+           <button id="btn1">Login</button>
+       </form>
+         </div>
+      </div>
+      <!--************************************************************************************** -->
+
+         <!-- group chat page -->
+  <div id="messagearea" class="row">
+    <div class="row">
+                     <!-- No. of online userwith thier names -->
+        <div class="leftcolumn" id="onlinearea">
+             <div class="card">
+               <div id="onlineusersnum"><strong></strong></div>
+               <ul class="li-group users1"></ul>
+             </div>
+             </br>
+              <div class="card">
+              <!-- <button id="privatechat" style="background-color: rgba(0, 0, 0, 0.5);"> Private chat</button> -->
+              </div>
+        </div>
+        </br>
+                          <!-- group chat area -->
+         <div id="mario-chat" class="rightcolumn col-md-8 animate ">
+                <div id="chat-window">
+                   <div id="output"></div>
+                   <div id="feedback"></div>
+                </div>
+                <!--  <input id="handle" type="text" placeholder="username"/>  -->
+                <input id="message" type="text" placeholder="Type Message here"/>
+                <button id="send">Send</button>
+         </div>
+     </div>
+  </div>
+
+    <!--************************************************************************************** -->
+    <!-- for private chat page -->
+        <div id="mario-chat1" class="rightcolumn col-md-8 animate">
+               <div id="chat-window1">
+                  <div id="output1"></div>
+                  <div id="feedback1"></div>
+               </div>
+               <!--  <input id="handle" type="text" placeholder="username"/>  -->
+               <!-- <input id="priwhom" type="text" style="background-color:LightGray" placeholder="whom to send"/> -->
+              <input id="message1" type="text" placeholder="type Message here"/>
+              <button id="send1">Send</button>
+              <button id="cancel">cancel</button>
+        </div>
+
+  <!--************************************************************************************** -->
+    </div>
+    <!--including sockets library  for client side through CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="animate.js"></script>
+        <script src="/chat.js"></script>
+
+  </body>
+</html>
